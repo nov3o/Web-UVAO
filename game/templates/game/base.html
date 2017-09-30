@@ -1,14 +1,17 @@
 {% load staticfiles %}
+<!DOCTYPE html>
 <html>
 <head>
 <title>UVAO</title>
 <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
-<body onclick="swtch()">
-	<audio id="audio" src="{% static 'music/qqhi.mp3' %}" autoplay loop></audio>
+<body onclick="nexxxt()">
+	<div class="back"></div>
+	<audio id="audio" src="" autoplay loop></audio>
+	<div class="full-page-text"></div>
 	<div class="dialogue">
-		<p class="name" id="name">Slave</p>
-		<p class="message" id="message">Раздавшийся телефонный звонок оторвал меня от моих размышлений, я поспешно выбросил сигарету, злорадно надеясь, что она попадет в какого-нибудь прохожего, который в данный момент мог бы пройти под моим окном. </p></a>
+		<p class="name" id="name"></p>
+		<p class="message" id="message"></p></a>
 	</div>
 	<script type="text/javascript" src="{% static 'js/script.js' %}"></script>
 </body>
