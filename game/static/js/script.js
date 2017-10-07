@@ -1,7 +1,7 @@
-currScene = 0
 mode = 'dialogue'
 choices = {}
 yourChoices = ''
+access = false
 
 //all scenes
 	scenes = [
@@ -175,7 +175,7 @@ yourChoices = ''
 		[,,,,'empty'],
 		[,,'black','Кто-то звал меня по имени:','dialogue'],
 		[,,,'-<i> ...!</i>'],
-		[,,,'Я приоткрыл глаза, рядом со мной стояла Юля в летнем платье. Увидев, что я проснулся, она схватила меня за руку и помогла встать. Мы находились у лесного озера, на берегу которого, я и спал в шезлонге.'],
+		[,,'koczka_summer.jpg','Я приоткрыл глаза, рядом со мной стояла Юля в летнем платье. Увидев, что я проснулся, она схватила меня за руку и помогла встать. Мы находились у лесного озера, на берегу которого, я и спал в шезлонге.'],
 		[,,,'-<i> Юль, ты чего?</i>'],
 		[,,,'Я позевывая шёл за ней, она же крепко меня держала за руку, ведя к воде.'],
 		[,,'koczka_hand.jpg','Наконец, мы остановились на берегу, мои ноги изредка покрывала морская пена. Интересно, откуда в озере волны и морская пена? Юля ощутимо ткнула меня в спину:'],
@@ -260,21 +260,23 @@ yourChoices = ''
 		[,,'alone_kot.jpg','Пускай я и встретил этот Новый год на пару со своим котом, но та хандра, которая охватила меня в последние дни, наконец-то прошла.'],
 		[,,,'Я часто захаживал в тот мак и в тот парк, надеясь, что когда-нибудь вновь встречу ту девочку.'],
 		[,,,'Ведь теперь я точно знал, что для того, чтобы с тобой случалось что-то хорошее, нужно верить, и тогда оно обязательно случится.'],
-		[,,,['Вовсе не плохая концовка.','С Новым годом!'],'ending']
+		[,,,['Вовсе не плохая концовка.','С Новым годом!',],'badEnd']
 	]
 //functions
 	function next() {
+		if (access == false) {
+			return
+		}
+		document.getElementsByClassName('continue-button')[0].innerHTML = 'Continue'
 		list = scenes[currScene]
 		if (list[0] != null) document.getElementById('audio').src = '../../static/music/'+list[0]
 		if (list[2] != null) {
 			if (list[2].indexOf('.') == -1) {
-				document.body.style.background = list[2]
+				document.body.style.backgroundImage = list[2]
 			}
 			else {
-				document.body.style.background = 'url(../../static/images/' + list[2] +')'
+				document.body.style.backgroundImage = 'url(../../static/images/' + list[2] +')'
 			}
-			document.body.style.backgroundSize = 'cover'
-			document.body.style.backgroundPosition = 'center'
 		}
 		if (list[4] != undefined) mode = list[4]
 		switch(mode) {
@@ -294,6 +296,9 @@ yourChoices = ''
 				document.getElementsByClassName('dialogue')[0].style.display = 'none'
 				document.getElementsByClassName('back')[0].style.display = 'none'
 				document.getElementsByClassName('full-page-text')[0].style.visibility = 'hidden'
+			case 'slow-down':
+				slowDown(list)
+				break
 		}
 		currScene++
 	}
@@ -421,4 +426,33 @@ yourChoices = ''
 
 	function dash() {
 		currScene = scenes.length-1
+	}
+
+	function home() {
+		document.getElementsByClassName('menu')[0].style.display = 'block'
+		access = false
+	}
+
+	function autofill () {
+		for (i=0; i<scenes.length; i++) {
+
+		}
+	}
+
+	function slowDown () {
+
+	}
+
+	function play() {
+		access = true
+		document.getElementsByClassName('menu')[0].style.display = 'none'
+		document.body.style.backgroundImage = 'none'
+		document.body.style.backgroundColor = 'black'
+		currScene = 0
+	}
+
+	function cont() {
+		access = true
+		document.getElementsByClassName('menu')[0].style.display = 'none'
+		currScene -= 1
 	}
