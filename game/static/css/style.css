@@ -1,3 +1,13 @@
+@keyframes slowdn {
+	from {background-position: center top;}
+	to {background-position: center 75%;}
+}
+
+@keyframes slowdnSign{
+	from {opacity: 0}
+	to {opacity: 1}
+}
+
 * {
 	cursor: default;
 	font-family: 'Roboto';
@@ -11,7 +21,7 @@ body {
 	margin: 0;
 	padding: 0;
 	background-size: cover;
-	background-position: center;
+	background-position: center 25%;
 	overflow: hidden;
 	transition: background 1s ease-in-out;
 }
@@ -32,9 +42,9 @@ body {
 }
 
 .full-page-text {
-	visibility: hidden;
+	display: none;
 	width: 1000px;
-	height: 600px;
+	height: 23em;
 	margin: auto;
 	margin-top: 10px;
 	background: rgba(156, 156, 247, 0.84);
@@ -48,7 +58,6 @@ body {
 }
 
 .back {
-	display: none;
 	width: 100%;
 	height: 100%;
 	background: black;
@@ -56,6 +65,7 @@ body {
 	top: 0;
 	z-index: -1;
 	opacity: 0.7;
+	transition: opacity 0.4s ease-in-out 0s;
 }
 
 .choice-button {
@@ -136,7 +146,7 @@ img.arrow.arrow-right:hover, img.arrow.arrow-left:hover {
 	left: 25px;
 }
 
-.bad-end {
+.bad-end, .slow-down {
 	position: fixed;
 	text-align: center;
 	color: #b0b0b0;
@@ -144,17 +154,18 @@ img.arrow.arrow-right:hover, img.arrow.arrow-left:hover {
 	height: 100%;
 	width: 100%;
 	text-shadow: 0 0 20px #000000;
+	top: 0;
 }
 
-.bad-end > * {
+.bad-end, .slow-down > * {
 	font-family: 'Roboto Slab';
 }
 
-.main-title {
+.main-title, .main-text {
 	font-size: 100px;
 }
 
-.add-title, .again-button {
+.add-title, .again-button, .add-text {
 	font-size: 60px;
 }
 
@@ -181,8 +192,6 @@ img.arrow.arrow-right:hover, img.arrow.arrow-left:hover {
 	opacity: 0.8;
 	color: rgb(2, 2, 58);
 }
-
-
 
 .continue-button {
 	font-family: 'Oswald';
@@ -221,6 +230,13 @@ img.arrow.arrow-right:hover, img.arrow.arrow-left:hover {
 	font-size: 2em;
 	transition-property: text-shadow, color;
 	transition: 0.5s ease 0s;
+	color: #428bca;
+	text-decoration: none;
+}
+
+a:hover, a:visited, a:link {
+	text-decoration: none;
+	color: #428bca;
 }
 
 .menu-info > *:hover {
@@ -236,3 +252,35 @@ img.arrow.arrow-right:hover, img.arrow.arrow-left:hover {
 	left: 2%;
 }
 
+.menu-info:active, .menu-info:link, .menu-info:visited, .menu-info {
+	color: #428bca;
+	text-decoration: none;
+}
+
+.slow-down {
+	display: none;
+	background-position: center top;
+	background-image: url(../../static/images/slavia_happy_end.jpg);
+	background-size: cover;
+	color: white;
+}
+
+.main-text {
+	margin-top: 10%;
+}
+
+.slow-down > * {
+	opacity: 0;
+	transition: opacity 0.5s ease 0s;
+}
+
+.full-screen {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-position: center 25%;
+	background-image: url(../../static/images/3way.jpg); 
+	top: 0;
+	z-index: -1;
+}

@@ -47,7 +47,7 @@ access = false
 		[,,,'Я что-то буркнул в ответ, и поспешил ретироваться.'],
 		[,,,'Мне показалось, что в тот момент, как я открыл дверь наружу, кто-то за спиной тяжело вздохнул. Неужели та девушка за кассой? Небось думает себе "Ну наконец-то ушёл". Я мрачно натянул капюшон. Заглянув в ближайший работающий ларёк, я взял какого-то дешевого пойла, в надежде забыться в алкоголе.'],
 		[,,'kitchen.jpg','Так оно и получилось. Жизнь, серая и унылая, нисколько не изменилась после праздников. Выходные закончились, я вернулся к своей работе, и в этой рутине уже было некогда думать о своих проблемах. '],
-		[,,,['Концовка: не очень.',,'Попробуйте снова.'],'badEnd']
+		[,,,['Концовка: не очень.','','Попробуйте снова.'],'badEnd']
 	]
 
 	choices[1] = [
@@ -170,7 +170,7 @@ access = false
 		[,,,'Юля улыбнулась, ничего не ответив.'],
 		[,,,'К своему удивлению, магазин, который час назад был закрыт, вновь открылся, и мы с Юлей закупились мандаринами и чаем, я взял в отделе готовой продукции пару новогодних салатов. "Вот этот обязательно!" - сказала Юля и вручила мне контейнер с селедкой под шубой, и двумя трехлитровыми банками томатного сока. Ну и, конечно, купили кошачий корм и банку сметаны для домашнего любимца.','full-page-text'],
 		[,,'koczka_home.jpg','Уже дома Юля помогла мне накрыть на стол, потом с радостью принялась пить сок. Юля выглядела очень счастливой, а её счастье видимо передавалось воздушно-капельным путем, так как вскоре и я почувствовал себя счастливым. В квартире откуда-то появился знакомый с детства хвойный аромат вперемешку с запахом мандаринов. Я сидел в кресле и наблюдал, как Юля, сидящая напротив, шипит и щурится, жуя мандарины.'],
-		[,,,'В квартире откуда-то появился знакомый с детства хвойный аромат вперемешку с запахом мандаринов. Я сидел в кресле и наблюдал, как Юля, сидящая напротив, шипит и щурится, жуя мандарины.'],
+		[,,,'В квартире откуда-то появился знакомый с детства хвойный аромат вперемешку с запахом мандаринов. Я сидел в кресле и наблюдал, как Юля, сидящая напротив, шипит и щурится, жуя мандарины.','full-page-text'],
 		[,,,'На её коленях сидел толстый и довольный кот. Через несколько минут меня захватила сладкая дрёма и я провалился в сон.'],
 		[,,,,'empty'],
 		[,,'black','Кто-то звал меня по имени:','dialogue'],
@@ -212,7 +212,7 @@ access = false
 		[,,'slavia_out','Мы болтали со Славей обо всем: я узнал, что она только-только переехала в наш город учиться и пока не завела тут знакомых, так что я её первый друг.'],
 		[,,,'От этого сразу стало так тепло, даже не смотря на то, что на улице было куда ниже нуля. Вдруг что-то просвистело и над нами красиво распустились цветы праздничного салюта.'],
 		[,,,'Где-то закричали "<i>Ура!</i>", а мы просто стояли и смотрели, как яркие огоньки освещают небо. И я знал, что нас со Славей впереди ждет только хорошее.'],
-		[,,,['Хорошая концовка.','С Новым годом :3'],'slow-down'],
+		[,,,['Хорошая концовка.','С Новым годом :3',],'slow-down'],
 	]	
 
 	choices[1010011] = [
@@ -260,7 +260,7 @@ access = false
 		[,,'alone_kot.jpg','Пускай я и встретил этот Новый год на пару со своим котом, но та хандра, которая охватила меня в последние дни, наконец-то прошла.'],
 		[,,,'Я часто захаживал в тот мак и в тот парк, надеясь, что когда-нибудь вновь встречу ту девочку.'],
 		[,,,'Ведь теперь я точно знал, что для того, чтобы с тобой случалось что-то хорошее, нужно верить, и тогда оно обязательно случится.'],
-		[,,,['Вовсе не плохая концовка.','С Новым годом!',],'badEnd']
+		[,,,['Вовсе не плохая концовка.','С Новым годом!',''],'badEnd']
 	]
 //functions
 	function next() {
@@ -271,12 +271,7 @@ access = false
 		list = scenes[currScene]
 		if (list[0] != null) document.getElementById('audio').src = '../../static/music/'+list[0]
 		if (list[2] != null) {
-			if (list[2].indexOf('.') == -1) {
-				document.body.style.backgroundImage = list[2]
-			}
-			else {
-				document.body.style.backgroundImage = 'url(../../static/images/' + list[2] +')'
-			}
+			document.getElementsByClassName('full-screen')[0].style.backgroundImage = 'url(../../static/images/' + list[2] +')'
 		}
 		if (list[4] != undefined) mode = list[4]
 		switch(mode) {
@@ -294,8 +289,9 @@ access = false
 				break
 			case 'empty':
 				document.getElementsByClassName('dialogue')[0].style.display = 'none'
-				document.getElementsByClassName('back')[0].style.display = 'none'
-				document.getElementsByClassName('full-page-text')[0].style.visibility = 'hidden'
+				document.getElementsByClassName('back')[0].style.opacity = '0'
+				document.getElementsByClassName('full-page-text')[0].style.display = 'none'
+				break
 			case 'slow-down':
 				slowDown(list)
 				break
@@ -306,8 +302,8 @@ access = false
 	function dialogue(list) {
 		if (list[4] == 'dialogue') {
 			document.getElementsByClassName('dialogue')[0].style.display = 'block'
-			document.getElementsByClassName('back')[0].style.display = 'none'
-			document.getElementsByClassName('full-page-text')[0].style.visibility = 'hidden'
+			document.getElementsByClassName('back')[0].style.opacity = '0'
+			document.getElementsByClassName('full-page-text')[0].style.display = 'none'
 		}
 		if (list[1] != null) {
 			document.getElementById('name').innerHTML = list[1]
@@ -321,8 +317,8 @@ access = false
 		if (list[4] == 'full-page-text') {
 			page.innerHTML = ''
 			document.getElementsByClassName('dialogue')[0].style.display = 'none'
-			document.getElementsByClassName('back')[0].style.display = 'block'
-			document.getElementsByClassName('full-page-text')[0].style.visibility = 'visible'
+			document.getElementsByClassName('back')[0].style.opacity = '0.7'
+			document.getElementsByClassName('full-page-text')[0].style.display = 'block'
 		}
 		p = document.createElement('p')
 		p.appendChild(document.createTextNode(list[3]))
@@ -331,7 +327,7 @@ access = false
 
 	function choicePage(list) {
 		document.getElementsByClassName('dialogue')[0].style.display = 'none'
-		document.getElementsByClassName('back')[0].style.display = 'block'
+		document.getElementsByClassName('back')[0].style.opacity = '0.7'
 		document.getElementsByClassName('choices')[0].style.display = 'block'
 		summaryHeight = 0
 		vars = list[3]
@@ -351,7 +347,7 @@ access = false
 
 	function choice(ch) {
 		document.getElementsByClassName('dialogue')[0].style.display = 'block'
-		document.getElementsByClassName('back')[0].style.display = 'none'
+		document.getElementsByClassName('back')[0].style.opacity = '0'
 		document.getElementsByClassName('choices')[0].style.display = 'none'
 		document.body.replaceChild(choiceListClone, choiceList)
 		choiceList.appendChild(emptyButton)
@@ -391,7 +387,7 @@ access = false
 		words = list[3]
 		endNode = document.getElementsByClassName('bad-end')[0]
 		document.getElementsByClassName('dialogue')[0].style.display = 'none'
-		document.getElementById('back').style.display = 'block'
+		document.getElementById('back').style.opacity = '0.7'
 		endNode.style.display = 'block'
 		endChilds = endNode.childNodes
 		summaryHeight = 0
@@ -439,8 +435,17 @@ access = false
 		}
 	}
 
-	function slowDown () {
-
+	function slowDown (list) {
+		words = list[3]
+		document.getElementsByClassName('slow-down')[0].style.display = 'block'
+		document.getElementsByClassName('dialogue')[0].style.display = 'none'
+		slowDownNode = document.getElementsByClassName('slow-down')[0]
+		slowDownNode.style.animation = 'slowdn 5s ease-out 0s 1 normal'
+		document.getElementsByClassName('main-text')[0].innerHTML = words[0]
+		document.getElementsByClassName('add-text')[0].innerHTML = words[1]
+		setTimeout("slowDownNode.style.backgroundPosition = 'center 75%'", 5000);
+		setTimeout("document.getElementsByClassName('main-text')[0].style.opacity = '1'", 4500);
+		setTimeout("document.getElementsByClassName('add-text')[0].style.opacity = '1'", 4750);
 	}
 
 	function play() {
