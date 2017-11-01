@@ -5,7 +5,7 @@ access = false
 
 //all scenes
 	scenes = [
-		[,,'black','<i>За окном медленно падает снег. В круговороте кружатся снежинки, которые еще не знают, что через мгновение разлетятся в разные стороны и уже никогда не будут вместе, как прежде. Они неспешно опускаются на одинокий огонек в ночи и мгновенно исчезают, тая в его жарком пламени.</i>','dialogue'],
+		[,,'black.jpg','<i>За окном медленно падает снег. В круговороте кружатся снежинки, которые еще не знают, что через мгновение разлетятся в разные стороны и уже никогда не будут вместе, как прежде. Они неспешно опускаются на одинокий огонек в ночи и мгновенно исчезают, тая в его жарком пламени.</i>','dialogue'],
 		[,,'room.jpg','Раздавшийся телефонный звонок оторвал меня от моих размышлений, я поспешно выбросил сигарету, злорадно надеясь, что она попадет в какого-нибудь прохожего, который в данный момент мог бы пройти под моим окном.'],
 		[,,,'Я прикрыл поплотнее дверь на лоджию и, растирая замерзшие руки, поспешил к мобильному, который казалось что вот-вот вибрируя спрыгнет со стола.'],
 		[,,,'Взглянув украдкой на экран, я выдавил из себя фальшивую улыбку:'],
@@ -62,46 +62,46 @@ access = false
 		[,,,' Я шагнул на присыпанные снегом дорожки, и двинулся по аллее.'],
 		[,,,['Зайти в парк'],'choice'],
 	]
+	//maze
+		choices[10] = [ //2010
+			[,,'park.jpg','Я стою у входа в парк. Куда мне пойти?','dialogue'],
+			[,,,['Налево','Прямо','Направо'],'choice']
+		]
 
-	choices[10] = [ //2010
-		[,,'park.jpg','Я стою у входа в парк. Куда мне пойти?','dialogue'],
-		[,,,['Налево','Прямо','Направо'],'choice']
-	]
+		choices[100] = [ //2007 //to 10 proved
+			[,,'1way.jpg','Дорожка привела меня в тупик.','dialogue'],
+			[,,,['Вернуться ко входу в парк'],'choice']
+		]
 
-	choices[100] = [ //2007 //to 10 proved
-		[,,'1way.jpg','Дорожка привела меня в тупик.','dialogue'],
-		[,,,['Вернуться ко входу в парк'],'choice']
-	]
+		choices[101] = [ //2014 
+			[,,'2way.jpg','Очередная развилка','dialogue'],
+			[,,,['Налево','Направо'],'choice']
+		]
 
-	choices[101] = [ //2014 
-		[,,'2way.jpg','Очередная развилка','dialogue'],
-		[,,,['Налево','Направо'],'choice']
-	]
+		choices[1010] = [ //2011
+			[,,'2way.jpg','Развилка','dialogue'],
+			[,,,['Прямо','Направо'],'choice'],
+		]
 
-	choices[1010] = [ //2011
-		[,,'2way.jpg','Развилка','dialogue'],
-		[,,,['Прямо','Направо'],'choice'],
-	]
+		choices[10100] = [ //2015
+			[,,'2way.jpg','Очередная развилка ','dialogue'],
+			[,,,['Налево','Направо'],'choice']
+		]
 
-	choices[10100] = [ //2015
-		[,,'2way.jpg','Очередная развилка ','dialogue'],
-		[,,,['Налево','Направо'],'choice']
-	]
+		choices[1011] = [ //2016
+			[,,'lavochka.jpg','Тропинка поворачивает налево','dialogue'],
+			[,,,['Налево'],'choice'],
+		]
 
-	choices[1011] = [ //2016
-		[,,'lavochka.jpg','Тропинка поворачивает налево','dialogue'],
-		[,,,['Налево'],'choice'],
-	]
+		choices[10110] = [ //2013
+			[,,'3way.jpg','Снова развилка.','dialogue'],
+			[,,,['Налево','Прямо','Направо'],'choice']
+		]
 
-	choices[10110] = [ //2013
-		[,,'3way.jpg','Снова развилка.','dialogue'],
-		[,,,['Налево','Прямо','Направо'],'choice']
-	]
-
-	choices[102] = [ //2012
-		[,,'2way.jpg','Очередная развилка ','dialogue'],
-		[,,,['Прямо','Направо'],'choice']
-	]
+		choices[102] = [ //2012
+			[,,'2way.jpg','Очередная развилка ','dialogue'],
+			[,,,['Прямо','Направо'],'choice']
+		]
 
 	choices[101001] = [
 		[,,,'Внезапно кто-то крикнул прямо за моей спиной.','dialogue'],
@@ -225,7 +225,7 @@ access = false
 		[,,,'-<i> Замечательно!</i>'],
 		[,,,'Мы не особо общались по пути ко мне домой, но похоже неко-девочке это было не так и важно: она весело вышагивала рядом.'],
 		[,,,'На входе из парка нам встретилась та, "вторая".'],
-		[,,'koczki_park','Она злобно зыркнула на меня, схватила "первую" под руку и громко зашептала ей в ухо, что даже я всё услышал:'],
+		[,,'koczki_park.jpg','Она злобно зыркнула на меня, схватила "первую" под руку и громко зашептала ей в ухо, что даже я всё услышал:'],
 		[,,,'-<i> Ты что не видишь, что ему уже не помочь? Он не верит в это всё.</i>'],
 		[,,,'Я негромко кашлянул.'],
 		[,,,'-<i> Я, пожалуй пойду.</i>'],
@@ -233,7 +233,7 @@ access = false
 		[,,,'-<i> Неужели ты правда не веришь?</i>'],
 		[,,,'Я не совсем понимал, что она имеет в виду, так что промолчал.'],
 		[,,,'-<i> Арр! Делай что хочешь!</i> - сказав это, "вторая" скрылась в парке.'],
-		[,,'koczka_surprised','"Первая" посмотрела ей вслед, но не стала её преследовать.'],
+		[,,'koczka_surprised.jpg','"Первая" посмотрела ей вслед, но не стала её преследовать.'],
 		[,,,'Я участливо поинтересовался:'],
 		[,,,'-<i> Не догонишь её? Вы же сёстры. Не надо ссорится.</i>'],
 		[,,,'Девочка грустно взглянула на меня:'],
@@ -270,9 +270,7 @@ access = false
 		document.getElementsByClassName('continue-button')[0].innerHTML = 'Continue'
 		list = scenes[currScene]
 		if (list[0] != null) document.getElementById('audio').src = '../../static/music/'+list[0]
-		if (list[2] != null) {
-			document.getElementsByClassName('full-screen')[0].style.backgroundImage = 'url(../../static/images/' + list[2] +')'
-		}
+		if (list[2] != null) document.getElementsByClassName('full-screen')[0].style.backgroundImage = 'url(../../static/images/' + list[2] +')'
 		if (list[4] != undefined) mode = list[4]
 		switch(mode) {
 			case 'dialogue':
@@ -297,6 +295,7 @@ access = false
 				break
 		}
 		currScene++
+		console.log(currScene)
 	}
 
 	function dialogue(list) {
@@ -346,6 +345,7 @@ access = false
 	}
 
 	function choice(ch) {
+		access == true
 		document.getElementsByClassName('dialogue')[0].style.display = 'block'
 		document.getElementsByClassName('back')[0].style.opacity = '0'
 		document.getElementsByClassName('choices')[0].style.display = 'none'
@@ -378,6 +378,7 @@ access = false
 				yourChoices = '10100'
 				break		
 		}
+		console.log(yourChoices)
 		scenes = scenes.concat(choices[yourChoices])
 		next()
 		currScene--
@@ -408,9 +409,28 @@ access = false
 		endNode.style.display = 'none'
 		next()
 		currScene = 0
+		autofill(scenes)
 	}
 
 	function prev() {
+		if (scenes[currScene-1][4] == "dialogue") {
+			alert('dialogue now')
+			for (i=0;scenes[currScene-2-i][4] != 'dialogue' ;i++) {
+				currScene--
+			}
+			switch(scenes[currScene-2-i][4]) {
+				case 'full-page-text':
+					alert('fpt')
+					break
+				case 'choice':
+					alert('choice')
+
+					break
+				case 'empty':
+					alert('empty')
+					break
+			}
+		}
 		currScene -= 3
 		if (currScene < 0) {
 			currScene = 0
@@ -427,12 +447,6 @@ access = false
 	function home() {
 		document.getElementsByClassName('menu')[0].style.display = 'block'
 		access = false
-	}
-
-	function autofill () {
-		for (i=0; i<scenes.length; i++) {
-
-		}
 	}
 
 	function slowDown (list) {
@@ -454,10 +468,19 @@ access = false
 		document.body.style.backgroundImage = 'none'
 		document.body.style.backgroundColor = 'black'
 		currScene = 0
+		autofill(scenes)
 	}
 
 	function cont() {
 		access = true
 		document.getElementsByClassName('menu')[0].style.display = 'none'
 		currScene -= 1
+	}
+
+	function autofill(list) {
+		for (i=0; i<list.length; i++) {
+			if (list[i][2] == undefined) {
+				list[i][2] = list[i-1][2]
+			}
+		}
 	}
