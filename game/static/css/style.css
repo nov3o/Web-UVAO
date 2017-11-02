@@ -14,6 +14,10 @@
 	font-family: 'Roboto';
 }
 
+p {
+	margin: 0;
+}
+
 *::selection {
 	background: transparent;
 }
@@ -88,42 +92,6 @@ body {
 .choices {
 	width: 100%;
 	position: fixed;
-}
-
-.arrow {
-	position: absolute;
-	top: 10px;
-	width: 75px;
-	opacity: 0.1;
-	cursor: pointer;
-	transition: opacity 0.2s ease-in-out 0s;
-}
-
-.message:hover .arrow {
-	opacity: 0.4;
-}
-
-img.arrow.arrow-right:hover, img.arrow.arrow-left:hover {
-	opacity: 0.8;
-}
-
-.arrow-left {
-	left: 20px;
-}
-
-.arrow-right {
-	right: 20px;
-}
-
-.name {
-	position: absolute;
-	left: 7%;
-	top: -22%;
-	background: #4fb5d2;
-	margin: 0;
-	padding: 2px 9px;
-	border-radius: 600px;
-	display: none;
 }
 
 .upper-button {

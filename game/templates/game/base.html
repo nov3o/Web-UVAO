@@ -26,11 +26,11 @@
 		<div class="choice-button" onclick="choice()"></div></div>
 		<audio id="audio" src="../../static/music/theme2.mp3" autoplay loop></audio>
 		<div class="full-page-text"></div>
-		<div class="dialogue">
-			<div class="message" id="message">
-				<p class="name" id="name"></p>
-				<p id="text" class="text"></p>
-			</div>
+		<div class="message" id="message">
+			<p class="name" id="name"></p>
+			<p id="text" class="text"></p>
+			<img class="dash upper-button" src="{% static 'icons/dash.png' %}" onclick="dash()">
+			<img class="home upper-button" src="{% static 'icons/home.png' %}" onclick="home()">
 		</div>
 		<div class="menu">
 			<div class="flakes"></div>
