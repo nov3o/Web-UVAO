@@ -35,7 +35,7 @@ body {
 	position: fixed;
 	padding: 10px;
 	box-shadow: -5px 0 9px 8px #030043;
-	height: 150px;
+	min-height: 175px;
 	width: 100%;
 	bottom: 10px;
 	opacity: 0.9;
