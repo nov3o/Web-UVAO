@@ -483,3 +483,21 @@ music = '../../static/music/theme2.mp3'
 			next()
 		}
 	}
+
+	function preloading() {
+		pictures = ['1way.jpg', '2way.jpg', '3way.jpg', 'alone_kot.jpg',
+			'black.jpg', 'hat.jpg', 'kitchen.jpg', 'koczka.jpg', 'koczka_eyes.jpg',
+			'koczka_hand.jpg', 'koczka_hat.jpg', 'koczka_home.jpg', 'koczka_sad.jpg',
+			'koczka_smile.jpg', 'koczka_summer.jpg', 'koczka_surprised.jpg',
+			'koczka_tongue.jpg', 'koczki.jpg', 'koczki_park.jpg', 'lavochka.jpg',
+			'lavochki.jpg', 'park.jpg', 'room.jpg', 'slavia.jpg', 'slavia_close.jpg',
+			'slavia_happy_end.jpg', 'slavia_out.jpg', 'slavia_smile.jpg', 'slavia_sweater.jpg',
+			'street.jpg', 'table.jpg', 'two_shade.jpg', 'watch.jpg'
+		]
+		for (var i = 0; i < pictures.length; i++) {
+			setTimeout("document.getElementById('preload').src = 'static/images/'+pictures["+i+"]",500*(i+1))
+			if (pictures[i] == 'watch.jpg') {
+				setTimeout("document.querySelector('#preload').remove()", 500*(i+2))
+			}
+		}
+	}

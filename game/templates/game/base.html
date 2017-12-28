@@ -10,7 +10,7 @@
 		<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 		<link rel="stylesheet" href="{% static 'css/style.css' %}">
 	</head>
-	<body onclick="next()" onkeydown="keyActing(event)">
+	<body onload="preloading()" onclick="next()" onkeydown="keyActing(event)">
 		<div class="full-screen"></div>
 		<div class="bad-end">
 			<p class="main-title"></p>
@@ -42,6 +42,7 @@
 					<a target="_blanc" href="https://vk.com/orika_art">Группа Орики</a></div>
 			</div>
 		</div>
+		<img style="display: none" id="preload" src="">
 		<script type="text/javascript" src="{% static 'js/script.js' %}"></script>
 	</body>
 </html>
