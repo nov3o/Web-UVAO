@@ -221,7 +221,7 @@ music = '../../static/music/theme2.mp3'
 		[,,'Девушка скрылась за дверью "служебное помещение", а я сел, чувствуя как на моем лице появляется улыбка вместе с румянцем.'],
 		[,'slavia_sweater.jpg','Через пару минут, девушка вернулась, уже в обычной одежде и без фирменного козырька.'],
 		[,,'-<i> Кстати, меня Славя зовут!</i>'],
-		[,'slavia_out','Мы болтали со Славей обо всем: я узнал, что она только-только переехала в наш город учиться и пока не завела тут знакомых, так что я её первый друг.'],
+		[,'slavia_out.jpg','Мы болтали со Славей обо всем: я узнал, что она только-только переехала в наш город учиться и пока не завела тут знакомых, так что я её первый друг.'],
 		[,,'От этого сразу стало так тепло, даже не смотря на то, что на улице было куда ниже нуля. Вдруг что-то просвистело и над нами красиво распустились цветы праздничного салюта.'],
 		[,,'Где-то закричали "<i>Ура!</i>", а мы просто стояли и смотрели, как яркие огоньки освещают небо. И я знал, что нас со Славей впереди ждет только хорошее.'],
 		[,,['Хорошая концовка.','С Новым годом :3',],'slow-down'],
@@ -485,19 +485,18 @@ music = '../../static/music/theme2.mp3'
 	}
 
 	function preloading() {
-		pictures = ['1way.jpg', '2way.jpg', '3way.jpg', 'alone_kot.jpg',
-			'black.jpg', 'hat.jpg', 'kitchen.jpg', 'koczka.jpg', 'koczka_eyes.jpg',
-			'koczka_hand.jpg', 'koczka_hat.jpg', 'koczka_home.jpg', 'koczka_sad.jpg',
-			'koczka_smile.jpg', 'koczka_summer.jpg', 'koczka_surprised.jpg',
-			'koczka_tongue.jpg', 'koczki.jpg', 'koczki_park.jpg', 'lavochka.jpg',
-			'lavochki.jpg', 'park.jpg', 'room.jpg', 'slavia.jpg', 'slavia_close.jpg',
-			'slavia_happy_end.jpg', 'slavia_out.jpg', 'slavia_smile.jpg', 'slavia_sweater.jpg',
-			'street.jpg', 'table.jpg', 'two_shade.jpg', 'watch.jpg'
-		]
+		pictures = ['room.jpg', 'koczki.jpg', 'koczka.jpg', 'slavia.jpg',
+		 'table.jpg', 'hat.jpg', 'kitchen.jpg', 'hat.jpg', 'slavia_smile.jpg',
+		  'street.jpg', 'park.jpg', '1way.jpg', '2way.jpg', '2way.jpg', '2way.jpg',
+		  'lavochka.jpg', '3way.jpg', '2way.jpg', 'koczka_smile.jpg', 'koczka_hat.jpg',
+		  'koczka_smile.jpg', 'koczka_tongue.jpg', 'koczka_sad.jpg', 'koczka_home.jpg', 
+		  'black', 'koczka_summer.jpg', 'koczka_hand.jpg', 'black', 'slavia_close.jpg', 
+		  'slavia_sweater.jpg', 'slavia_out', 'watch.jpg', 'koczka_eyes.jpg', 'koczki_park.jpg', 
+		  'koczka_surprised.jpg', 'two_shade.jpg', 'alone_kot.jpg']
 		for (var i = 0; i < pictures.length; i++) {
-			setTimeout("document.getElementById('preload').src = 'static/images/'+pictures["+i+"]",500*(i+1))
+			setTimeout("document.getElementById('preload').src = 'static/images/'+pictures["+i+"]", 100*(i+1))
 			if (pictures[i] == 'watch.jpg') {
-				setTimeout("document.querySelector('#preload').remove()", 500*(i+2))
+				setTimeout("document.querySelector('#preload').remove()", 100*(i+2))
 			}
 		}
 	}
