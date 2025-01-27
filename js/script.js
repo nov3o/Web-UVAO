@@ -8,6 +8,8 @@ music = ''
 
 choices = choicesRu
 scenes = scenesRu
+scenesDefault = scenes.slice(0)
+
 
 const localizations = {
   ja: [scenesModificationJa, choiceModificationsJa],
@@ -15,15 +17,6 @@ const localizations = {
   ru: [scenesModificationRu, choiceModificationsRu]
 };
 
-const [scenesMod, choiceMod] = localizations['en'];
-
-modifyList(scenes, scenesMod);
-
-Object.keys(choices).forEach((key) => {
-  modifyList(choices[key], choiceMod[key]);
-});
-
-scenesDefault = scenes.slice(0)
 
 //functions
 function next() {
@@ -242,3 +235,14 @@ function keyActing(event) {
   }
 }
 
+function translate(lang) {
+  const [scenesMod, choiceMod] = localizations[lang];
+
+  modifyList(scenes, scenesMod);
+
+  Object.keys(choices).forEach((key) => {
+    modifyList(choices[key], choiceMod[key]);
+  });
+
+  scenesDefault = scenes.slice(0)
+}
