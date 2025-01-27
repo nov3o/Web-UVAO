@@ -267,7 +267,7 @@ choicesRu[1010011] = [
 ]
 
 function getThirdElements(list) {
-  return console.log(JSON.stringify(list.map(el => el[2])));
+  return list.map(el => el[2]);
 }
 
 function modifyList(mainList, augmentingList) {
@@ -281,3 +281,9 @@ function modifyList(mainList, augmentingList) {
 
   console.log("Merging has finished without errors");
 }
+
+const scenesModificationRu = getThirdElements(scenesRu);
+const choiceModificationsRu = {};
+Object.keys(choicesRu).forEach((key) => {
+  choiceModificationsRu[key] = getThirdElements(choicesRu[key]);
+});

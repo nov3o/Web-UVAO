@@ -6,8 +6,23 @@ backImg = ''
 music = ''
 
 
-choices = choicesEn
-scenes = scenesEn
+choices = choicesRu
+scenes = scenesRu
+
+const localizations = {
+  ja: [scenesModificationJa, choiceModificationsJa],
+  en: [scenesModificationEn, choiceModificationsEn],
+  ru: [scenesModificationRu, choiceModificationsRu]
+};
+
+const [scenesMod, choiceMod] = localizations['en'];
+
+modifyList(scenes, scenesMod);
+
+Object.keys(choices).forEach((key) => {
+  modifyList(choices[key], choiceMod[key]);
+});
+
 scenesDefault = scenes.slice(0)
 
 //functions
@@ -164,6 +179,7 @@ function dash() {
 }
 
 function home() {
+  if (mode == "choice") return  // kostyli. i try to avoid bugs related to pause-choice states
   document.getElementsByClassName('continue-button')[0].innerHTML = 'Continue'
   document.getElementsByClassName('menu')[0].style.display = 'block'
   document.getElementsByClassName('message')[0].style.display = 'none'

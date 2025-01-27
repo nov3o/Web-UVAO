@@ -134,7 +134,7 @@ const choiceModificationsEn = {
     "—<i> Well, I had to say it. Probably.</i>",
     "<i>The cat-girl smirked slyly.</i>",
     "—<i> By the way, what should I call you? Our scriptwriter’s tired of coming up with synonyms for ‘girl.’</i>",
-    "—<i> Yu...</i> she hesitated for a second, <i> let’s say Julia!</i>",
+    "—<i> Ju...</i> she hesitated for a second, <i> let’s say Julia!</i>",
     "—<i> Say? I knew it—suspicious girls with cat ears. See, now you’re resorting to fake names.</i>",
     "Julia smiled and said nothing.",
     "To my surprise, the store that had been closed an hour ago was open again. Julia and I stocked up on tangerines, tea, and a couple of pre-made New Year’s salads.",
@@ -237,15 +237,3 @@ const choiceModificationsEn = {
     ]
   ]
 }
-
-
-const scenesEn = JSON.parse(JSON.stringify(scenesRu));
-const choicesEn = JSON.parse(JSON.stringify(choicesRu));
-
-modifyList(scenesEn, scenesModificationEn);
-
-// Apply modifications to choicesEn
-Object.keys(choicesEn).forEach((key) => {
-  modifyList(choicesEn[key], choiceModificationsEn[key]);
-});
-
