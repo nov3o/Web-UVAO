@@ -265,3 +265,19 @@ choicesRu[1010011] = [
   [,,'Ведь теперь я точно знал, что для того, чтобы с тобой случалось что-то хорошее, нужно верить, и тогда оно обязательно случится.'],
   [,,['Вовсе не плохая концовка.','С Новым годом!',''],'badEnd']
 ]
+
+function getThirdElements(list) {
+  return console.log(JSON.stringify(list.map(el => el[2])));
+}
+
+function modifyList(mainList, augmentingList) {
+  if (mainList.length !== augmentingList.length) {
+    throw new Error("Both lists must have the same length.");
+  }
+
+  for (let i = 0; i < mainList.length; i++) {
+    mainList[i][2] = augmentingList[i];
+  }
+
+  console.log("Merging has finished without errors");
+}

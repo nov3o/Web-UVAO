@@ -6,8 +6,8 @@ backImg = ''
 music = ''
 
 
-choices = choicesRu
-scenes = scenesRu
+choices = choicesEn
+scenes = scenesEn
 scenesDefault = scenes.slice(0)
 
 //functions
@@ -225,3 +225,4 @@ function keyActing(event) {
     home()
   }
 }
+
