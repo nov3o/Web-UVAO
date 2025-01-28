@@ -246,3 +246,5 @@ function translate(lang) {
 
   scenesDefault = scenes.slice(0)
 }
+
+translate('en')
